@@ -12,8 +12,10 @@ function App() {
   function inputNumOne(event) {
     if (event.target.innerText === "Clear") {
       setNumOne(0);
-    } else if (numOne > 0) {
+    } else if (numOne > 0 || numOne === "0.") {
       setNumOne(numOne + event.target.innerText);
+    } else if (event.target.innerText === ".") {
+      setNumOne("0.");
     } else {
       setNumOne(event.target.innerText);
     }
@@ -23,8 +25,10 @@ function App() {
   function inputNumTwo(event) {
     if (event.target.innerText === "Clear") {
       setNumTwo(0);
-    } else if (numTwo > 0) {
+    } else if (numTwo > 0 || numTwo === "0.") {
       setNumTwo(numTwo + event.target.innerText);
+    } else if (event.target.innerText === ".") {
+      setNumTwo("0.");
     } else {
       setNumTwo(event.target.innerText);
     }
